@@ -12,6 +12,21 @@ Catch Character Bot - single-file final
 
 Configure via .env
 """
+# ================= AUTO INSTALL PACKAGES =================
+import sys
+import subprocess
+
+def auto_install(pkg):
+    try:
+        __import__(pkg)
+    except ImportError:
+        print(f"[AUTO] Installing {pkg} ...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", pkg])
+
+auto_install("aiosqlite")
+auto_install("telegram")
+auto_install("dotenv")
+# =========================================================
 
 import os
 import asyncio
