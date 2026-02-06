@@ -1,13 +1,5 @@
 # Catch Character Bot — final files
-
-အောက်မှာ **main.py**, **requirements.txt**, **.env** တို့ကို တစ်ထုပ်တည်း စုထားပါတယ်။
-Copy & paste လုပ်ပြီး သုံးပါ။
-
----
-
 ## main.py
-
-```python
 #!/usr/bin/env python3
 # coding: utf-8
 """
@@ -984,34 +976,3 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("Bot stopped by user")
-```
-
----
-
-
-```
-
----
-
-## .env (template)
-
-```text
-# Telegram bot token
-TOKEN=YOUR_TELEGRAM_BOT_TOKEN_HERE
-# Your Telegram user id (owner)
-OWNER_ID=123456789
-# Optional: chat id where backups are sent (numeric)
-BACKUP_CHAT_ID=
-# Default drop number (messages per drop)
-DROP_NUMBER=10
-```
-
----
-
-### အသုံးပြုနည်းတိုချုပ်
-
-1. `.env` ကို ပြီးမှ TOKEN နဲ့ OWNER_ID ထည့်ပါ။
-2. `pip install -r requirements.txt` ကို ပြီးပါ။
-3. `python main.py` ထဲ run ပါ။
-
-ဖိုင်များကို ပြင်ချင်သည်များ 있으면 ပြန်ပြောပါ။
