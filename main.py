@@ -16,16 +16,22 @@ Configure via .env
 import sys
 import subprocess
 
-def auto_install(pkg):
+def auto_install(import_name, pip_name=None):
     try:
-        __import__(pkg)
+        __import__(import_name)
     except ImportError:
+        pkg = pip_name or import_name
         print(f"[AUTO] Installing {pkg} ...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", pkg])
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install", pkg
+        ])
 
+# correct packages
 auto_install("aiosqlite")
-auto_install("telegram")
-auto_install("dotenv")
+auto_install("telegram", "python-telegram-bot==20.7")
+auto_install("dotenv", "python-dotenv")
+# =========================================================
+
 # =========================================================
 
 import os
